@@ -24,9 +24,15 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules\\bootstrap\\dist\\css\\bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules\\jquery\\dist\\jquery.min.js",
+              "node_modules\\popper.js\\dist\\umd\\popper.min.js",
+              "node_modules\\bootstrap\\dist\\js\\bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -88,6 +94,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "notasWeb"
+    }
+  },
+  "defaultProject": "notasWeb",
+  "cli": {
+    "analytics": "032961b6-7565-490c-ae11-12e02be6f68a"
+  }
 }
