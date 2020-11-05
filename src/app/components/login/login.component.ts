@@ -147,8 +147,8 @@ export class LoginComponent implements OnInit {
                 }
 
                 setTimeout(() => {
-                  // this.router.navigate(['http://jacbolivia2000.com']);
-                  console.log('Hola Mundo');
+                  this.router.navigate(['/main']);
+                  // console.log('Hola Mundo');
 
                 }, 3000);
 

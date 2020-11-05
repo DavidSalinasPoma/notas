@@ -26,21 +26,17 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { AssideComponent } from './shared/asside/asside.component';
-import { FooterComponent } from './shared/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
-import { AppPrincipalComponent } from './components/app-principal/app-principal.component';
+
+// Para recargar la pagina le aumenta un #
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    AssideComponent,
-    FooterComponent,
     LoginComponent,
-    AppPrincipalComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +55,8 @@ import { AppPrincipalComponent } from './components/app-principal/app-principal.
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
-    }
+    },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [AppComponent]
 })

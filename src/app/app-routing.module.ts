@@ -14,8 +14,12 @@ const routes: Routes = [
   //   component: UsuariosComponent,
   //   children: USUARIO_ROUTES
   // },
+  {
+    path: 'main',
+    loadChildren: () => import('./../app/components/app-principal/app-principal.module').then(m => m.AppPrincipalModule)
+  },
 
-  // { path: '**', pathMatch: 'full', redirectTo: 'login' }, // para mostrar la pagina por defecto
+  { path: '**', pathMatch: 'full', redirectTo: 'login' }, // para mostrar la pagina por defecto
 ];
 
 
