@@ -1,0 +1,78 @@
+<div class="animate__animated animate__fadeIn animate__slower" id="">
+  <div class="login-page fondo-gradiente " id="">
+    <div class="login-box">
+
+      <div class="login-logo">
+        <h1 class=""><a class="text-white" href="#"><b>Jac</b> Bolivia 2000</a></h1>
+      </div>
+
+      <!-- /.login-logo -->
+      <div class="card sombra">
+        <div class="card-body login-card-body fondo-login">
+          <div class="d-flex flex-column align-items-center" id="">
+            <img class="img-fluid w-50" src="./../../../assets/img/imgenLogo.png" alt="Log
+            o empresa jac Bolivia">
+            <p class="text-dark mt-2">Instituto técnico superior</p>
+          </div>
+
+          <form [formGroup]='this.formulario' (ngSubmit)='onSubmit($event)' novalidate>
+
+            <div class="input-group mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Email</mat-label>
+                <!-- autocomplete="off   para que no se guarde lo que escribimos -->
+                <input matInput formControlName='email' [errorStateMatcher]="this.matcher">
+                <mat-icon matSuffix>mail</mat-icon>
+                <!-- Validaciones -->
+                <mat-error *ngIf="this.email.errors">
+                  <p class="text-danger" *ngIf="this.email.hasError('required')">Ingrese su email.</p>
+                  <p class="text-danger" *ngIf="this.email.hasError('pattern')">Email incorrecto.</p>
+                </mat-error>
+              </mat-form-field>
+
+            </div>
+            <div class="input-group mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Contraseña</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName='password'>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <!-- Validaciones -->
+                <mat-error *ngIf="this.password.errors && this.password.touched">
+                  <p class="text-danger" *ngIf="this.password.hasError('required')">
+                    Ingrese su contraseña.
+                  </p>
+                </mat-error>
+              </mat-form-field>
+
+            </div>
+
+            <div class="flex-inciar-sesion">
+              <div class="recuerdame">
+                <section class="example-section">
+                  <mat-checkbox class="example-margin" formControlName="recordar">Recuerdame!</mat-checkbox>
+                </section>
+              </div>
+              <!-- /.col -->
+              <div class="boton-iniciar-sesion">
+                <button type="submit" mat-raised-button color="primary">Iniciar
+                  sesión</button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+          <!-- /.social-auth-links -->
+          <p class="mb-1">
+            <a href="http://jacbolivia2000.com" target="_blank">www.jacbolivia2000.com</a>
+          </p>
+          <!-- <p class="mb-2">
+            <a href="http://jacbolivia2000.com">Olvide mi contraseña</a>
+          </p> -->
+        </div>
+        <!-- /.login-card-body -->
+      </div>
+    </div>
+  </div>
+</div>

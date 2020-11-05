@@ -1,0 +1,57 @@
+/* Sombra para la tarjeta */
+.sombra {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  border-radius: 0.5rem !important;
+}
+
+/* Chek bok */
+.example-section {
+  margin: 12px 0;
+}
+
+.example-section .example-margin {
+  margin: 0 12px;
+  /* color: blue; */
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+}
+
+/* Fin Chek bok */
+
+.fondo-gradiente {
+  background: rgba(104, 220, 240, 1);
+  background: -moz-linear-gradient(left, rgba(104, 220, 240, 1) 0%, rgba(8, 54, 148, 1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(104, 220, 240, 1)), color-stop(100%, rgba(8, 54, 148, 1)));
+  background: -webkit-linear-gradient(left, rgba(104, 220, 240, 1) 0%, rgba(8, 54, 148, 1) 100%);
+  background: -o-linear-gradient(left, rgba(104, 220, 240, 1) 0%, rgba(8, 54, 148, 1) 100%);
+  background: -ms-linear-gradient(left, rgba(104, 220, 240, 1) 0%, rgba(8, 54, 148, 1) 100%);
+  background: linear-gradient(to right, rgba(104, 220, 240, 1) 0%, rgba(8, 54, 148, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#68dcf0', endColorstr='#083694', GradientType=1);
+}
+
+.login-logo h1 a {
+  text-shadow: 0px 0px 0.5rem #353535;
+}
+
+/* Sector recuerdame y bton iniciar sesion */
+.flex-inciar-sesion {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.boton-iniciar-sesion {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 326px) {
+  .flex-inciar-sesion {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
+/* Fin Sector recuerdame y bton iniciar sesion */
