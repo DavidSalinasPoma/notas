@@ -104,7 +104,7 @@ export class LoginComponent implements OnInit {
     if (this.formulario.valid) {
 
       const value = this.formulario.value
-      // console.log(this.formulario.value.recordar);
+      // console.log(this.formulario.value);
 
       this.login.email = value.email;
       this.login.password = value.password;
@@ -147,10 +147,10 @@ export class LoginComponent implements OnInit {
                 }
 
                 setTimeout(() => {
-                  this.router.navigate(['/main']);
+                  this.router.navigate(['/inicio']);
                   // console.log('Hola Mundo');
 
-                }, 3000);
+                }, 1000);
 
               }
             );
@@ -158,7 +158,7 @@ export class LoginComponent implements OnInit {
           }
         },
         err => {
-          // console.log(err);
+          console.log(err);
           this.toasterServices.error('Revise la conexion a internet', 'No hay conexion con el servidor');
         }
       );

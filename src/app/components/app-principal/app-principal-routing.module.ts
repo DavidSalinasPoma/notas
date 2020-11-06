@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppPrincipalComponent } from './app-principal.component';
 
 // Componentes
-import { AppPrincipalModule } from './app-principal.module';
+import { AppPrincipalComponent } from './app-principal.component';
+
+// Guardianes de rutas
+import { AuthGuard } from './../../shared/guards/auth.guard';
+
 
 
 const routes: Routes = [
   {
     path: '',
-    component: AppPrincipalComponent
+    component: AppPrincipalComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

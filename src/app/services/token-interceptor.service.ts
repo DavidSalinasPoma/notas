@@ -24,29 +24,23 @@ export class TokenInterceptorService implements HttpInterceptor { // implementam
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const tokenServices = this.injector.get(LoginService);
     // console.log(tokenServices.getToken());
-    let headers = new HttpHeaders();
-
-    // definimos nuestras cabezeras
-    headers = headers.set('Content-Type', 'application/x-www-form-urlencoded');
 
     // verifica si existe un token
     if (tokenServices.getToken()) {
 
       this.tokenizedReq = req.clone({
 
-        setHeaders: {
-          Authorization: `Bearer ${tokenServices.getToken()}`
-        },
-        // tslint:disable-next-line: object-literal-shorthand
-        headers
+        headers: req.headers
+          .set('Authorization', `Bearer ${tokenServices.getToken()}`)
+          .set('Content-Type', 'application/x-www-form-urlencoded')
       });
+
     } else {
 
       this.tokenizedReq = req.clone({
 
-        // setHeaders: {
-        //   Authorization: `Bearer ${tokenServices.getToken()}`
-        // }
+        headers: req.headers
+          .set('Content-Type', 'application/x-www-form-urlencoded')
       });
     }
     return next.handle(this.tokenizedReq).pipe(

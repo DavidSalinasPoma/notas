@@ -56,7 +56,10 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
       useClass: TokenInterceptorService,
       multi: true
     },
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -7,15 +7,10 @@ const routes: Routes = [
   // Definir la ruta por defecto
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
-  // estas dos rutas interctuaran con La contraseña
-  // { path: 'appPrincipal', component: NavegacionComponent, children: navegacionRoutes },
-  // {
-  //   path: 'usuarios/:id',
-  //   component: UsuariosComponent,
-  //   children: USUARIO_ROUTES
-  // },
+
+  // Lazy Load
   {
-    path: 'main',
+    path: 'inicio',
     loadChildren: () => import('./../app/components/app-principal/app-principal.module').then(m => m.AppPrincipalModule)
   },
 
