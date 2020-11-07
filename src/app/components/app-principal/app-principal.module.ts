@@ -12,6 +12,7 @@ import { HeaderComponent } from 'src/app/shared/header/header.component';
 
 // Angular Material
 import { MaterialModule } from './../../material/material.module';
+import { AppUsuariosComponent } from './app-usuarios/app-usuarios.component';
 
 
 
@@ -20,7 +21,8 @@ import { MaterialModule } from './../../material/material.module';
     AppPrincipalComponent,
     AssideComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    AppUsuariosComponent
   ],
   imports: [
     CommonModule,

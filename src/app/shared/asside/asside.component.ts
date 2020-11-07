@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+// Servicios
+import { LoginService } from './../../services/login.service';
+
+// Intefaces
+import { Identify } from './../../models/interfaces';
+
+
 @Component({
   selector: 'app-asside',
   templateUrl: './asside.component.html',
@@ -7,7 +14,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssideComponent implements OnInit {
 
-  constructor() { }
+  public identify: Identify;
+
+  constructor(private loginServices: LoginService) {
+
+    this.identify = JSON.parse(this.loginServices.getIdentify());
+
+  }
 
   ngOnInit(): void {
   }

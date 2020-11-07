@@ -1,0 +1,35 @@
+/* Ancho del filtro buscar del dataTablet */
+.mat-form-field {
+  font-size: 14px;
+  width: 30%;
+}
+
+/*Fin Ancho del filtro buscar del dataTablet */
+
+
+/* Con figuracion del escroll del dataTablet */
+table {
+  width: 1200px;
+}
+
+.example-container {
+  height: auto;
+  width: 100%;
+
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+@media (min-width: 1300px) {
+
+  /* logica */
+  .example-container {
+    overflow-x: inherit;
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
+/* Fin Con figuracion del escroll del dataTablet */

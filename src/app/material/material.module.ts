@@ -10,13 +10,26 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+// Data tables
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTableModule } from '@angular/material/table';
+
 
 
 
 @NgModule({
-    exports: [FormsModule, MatDialogModule,
+    exports: [
+        FormsModule, MatDialogModule,
         MatFormFieldModule, MatButtonModule,
         MatInputModule, MatDatepickerModule,
-        MatCheckboxModule, MatNativeDateModule, MatSelectModule, MatIconModule]
+        MatCheckboxModule, MatNativeDateModule,
+        MatPaginatorModule, MatSelectModule,
+        MatIconModule,
+        MatSortModule,
+        MatProgressSpinnerModule,
+        MatTableModule
+    ]
 })
 export class MaterialModule { }

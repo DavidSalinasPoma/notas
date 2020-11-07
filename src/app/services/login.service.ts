@@ -25,15 +25,8 @@ export class LoginService {
     if (getToken != null) {
       usuario.getToken = true;
     }
-    // console.log(user);
-
     const json = JSON.stringify(usuario); // convertimos el objeto a json.
     const params = 'json=' + json; // La varible con la que recibe el parametro. en el API.
-    // const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'); // la cabecera de conexion
-    // console.log(params);
-    // const headers = new HttpHeaders({
-    //   'Content-Type': 'application/x-www-form-urlencoded'
-    // });
     // retornamos respuestas de El APIRESTFUL
     return this.http.post(this.url + 'login', params);
   }

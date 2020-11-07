@@ -1,0 +1,127 @@
+<div class="animate__animated animate__fadeIn" id="">
+
+
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h2 class="font-weight-normal">Administrador de usuarios</h2>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a [routerLink]="[ '/inicio' ]" routerLinkActive="active">Inicio</a></li>
+            <li class="breadcrumb-item active">Usuarios</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+
+  </section>
+
+  <!-- Main content -->
+  <section class="content pl-2 pr-2">
+
+
+    <!-- Default box -->
+    <div class="card card-outline card-danger ">
+      <div class="card-header">
+        <h2 class="card-title text-dark">Lista de Usuarios</h2>
+        <button class="float-right" mat-raised-button color="primary"><i class="fa fa-user-plus"></i> Agregar
+          Usuarios</button>
+      </div>
+      <div class="card-body">
+
+        <div class="mat-elevation-z1 example-container">
+          <!-- Filtro data tablet -->
+          <mat-form-field appearance="outline" class="ml-2 mt-2">
+            <mat-label>Buscar</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+          </mat-form-field>
+
+          <table mat-table [dataSource]="dataSource" matSort class="table-striped">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="codigo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Codigo </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="carnet">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Carnet </th>
+              <td mat-cell *matCellDef="let element"> {{element.carnet}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="nombres">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombres </th>
+              <td mat-cell *matCellDef="let element"> {{element.nombres}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="apellidos">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos </th>
+              <td mat-cell *matCellDef="let element"> {{element.apellidos}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="direccion">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Dirección </th>
+              <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+              <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="rol">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Rol </th>
+              <td mat-cell *matCellDef="let element"> {{element.rol}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="estado">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+              <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="imagen">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Imagen </th>
+              <td mat-cell *matCellDef="let element"> {{element.imagen}} </td>
+            </ng-container>
+
+            <!-- Acciones -->
+            <ng-container matColumnDef="acciones">
+              <th mat-header-cell *matHeaderCellDef> Acciones </th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-button icon>
+                  <mat-icon class="text-success" title="Editar">create</mat-icon>
+                </button>
+                <button mat-button icon>
+                  <mat-icon class="text-danger" title="Eliminar">delete</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+
+
+
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer">
+        Sistema deUsuarios
+      </div>
+      <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+
+  </section>
+  <!-- /.content -->
+</div>
